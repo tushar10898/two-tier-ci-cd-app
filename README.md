@@ -1,5 +1,8 @@
 # Two-Tier Dockerized Flask and MySQL App on Amazon EC2 with GitHub Integration
 
+<img width="960" alt="two-tier app" src="https://github.com/tushar10898/two-tier-app/assets/165803170/bc39dcd4-a397-4bd8-85d1-e8ce797d0324">
+
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
