@@ -59,6 +59,9 @@ Before you begin, ensure you have the following:
    - Configure instance details such as network settings, security groups, and key pairs.
    - Review and launch the instance.
    - Once the instance is running, note down the public IP address or domain name associated with it for future SSH access.
+  
+    ![ec2connectterminal](https://github.com/tushar10898/two-tier-app/assets/165803170/12c480a5-b372-473e-ac95-b4ce1f56dd3c)
+
 
 ## Steps Involved
 
@@ -76,6 +79,9 @@ Before you begin, ensure you have the following:
      docker build -t flask-app -f Dockerfile .
      docker pull mysql:latest
      ```
+![dockerfile](https://github.com/tushar10898/two-tier-app/assets/165803170/7503d874-d231-4ff6-a7a6-63e8f8948499)
+
+
 
 3. **Docker Compose**
    - **Why Docker Compose?** Docker Compose is used to define and run multi-container Docker applications. It simplifies the process of defining and managing the interaction between different services.
@@ -85,7 +91,10 @@ Before you begin, ensure you have the following:
      sudo apt install -y docker-compose
      ```
    - **Docker Compose File Creation:** Create a `docker-compose.yml` file in your project directory to define the services, networks, and volumes for your application.
-   
+
+![docker-composeyml](https://github.com/tushar10898/two-tier-app/assets/165803170/2d4efe8f-ebd5-47e6-ad9f-2c5d8d3e8951)
+
+
    - **Starting Docker Compose:** Once you have your `docker-compose.yml` file ready, navigate to the directory containing the file and execute the following command to start the Docker Compose services:
      ```
      docker-compose up -d
@@ -102,7 +111,13 @@ Before you begin, ensure you have the following:
 
 Once the containers are running, access your Flask application through the public IP address or domain name associated with your EC2 instance. Test the functionality of your application to ensure it is working correctly.
 
+![final view](https://github.com/tushar10898/two-tier-app/assets/165803170/962c2bde-3500-4ff9-904d-dafd60383281)
+
+
 **Note:** If you encounter issues accessing the application, ensure that port 5000 is open in the security settings of your EC2 instance. You may need to add an inbound rule allowing traffic on port 5000 to ensure the Flask application can be accessed. 
+
+![securitygroup changes](https://github.com/tushar10898/two-tier-app/assets/165803170/1e150741-10c1-478b-af68-1d5be611cc99)
+
 
 ## Maintenance
 
