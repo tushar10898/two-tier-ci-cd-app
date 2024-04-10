@@ -1,0 +1,30 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Build Docker image
+      run: |
+        docker build -t flask-app .
+        docker tag flask-app:latest tushar10898/flask-app:latest
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u tushar10898 --password-stdin
+        docker push tushar10898/flask-app:latest
+
+    - name: Run tests
+      run: |
+        # Insert your test commands here
